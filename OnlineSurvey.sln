@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OnlineSurvey.Repos", "OnlineSurvey.Repos", "{58BC8E70-0E51-4EB0-A485-F2BD289EFC09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OnlineSurvey.Services", "OnlineSurvey.Services", "{4BDBE8F9-1604-41A1-ACD2-9D4440A6E91E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OnlineSurvey.DataAccessLayer", "OnlineSurvey.DataAccessLayer", "{84101AA3-09EE-4E44-9F07-E56BB89C2BB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineSurvey.DataAccessLayer", "OnlieSurvey.WebApp\OnlineSurvey.DataAccessLayer\OnlineSurvey.DataAccessLayer.csproj", "{E9B334FC-8E0B-4736-B8D1-BECE7B15FE75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineSurvey.Repos", "OnlieSurvey.WebApp\OnlineSurvey.Repos\OnlineSurvey.Repos.csproj", "{E7C3A3B1-F0EA-4A53-9449-1233F30F8279}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineSurvey.Services", "OnlieSurvey.WebApp\OnlineSurvey.Services\OnlineSurvey.Services.csproj", "{4C54B8AD-9DB2-4F2B-A2BB-657289513A91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineSurvey.WebApp.Service", "OnlieSurvey.WebApp\OnlieSurvey.WebApp.Service\OnlineSurvey.WebApp.Service.csproj", "{32D4F1E8-9E41-4377-961B-39357432839B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineSurvey.WebApp.Client", "OnlieSurvey.WebApp\OnlieSurvey.WebApp.Client\OnlineSurvey.WebApp.Client.csproj", "{592E8FE5-1298-47CE-8861-6EA7018ACD84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9B334FC-8E0B-4736-B8D1-BECE7B15FE75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9B334FC-8E0B-4736-B8D1-BECE7B15FE75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9B334FC-8E0B-4736-B8D1-BECE7B15FE75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9B334FC-8E0B-4736-B8D1-BECE7B15FE75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7C3A3B1-F0EA-4A53-9449-1233F30F8279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7C3A3B1-F0EA-4A53-9449-1233F30F8279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7C3A3B1-F0EA-4A53-9449-1233F30F8279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7C3A3B1-F0EA-4A53-9449-1233F30F8279}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C54B8AD-9DB2-4F2B-A2BB-657289513A91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C54B8AD-9DB2-4F2B-A2BB-657289513A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C54B8AD-9DB2-4F2B-A2BB-657289513A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C54B8AD-9DB2-4F2B-A2BB-657289513A91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32D4F1E8-9E41-4377-961B-39357432839B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32D4F1E8-9E41-4377-961B-39357432839B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32D4F1E8-9E41-4377-961B-39357432839B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32D4F1E8-9E41-4377-961B-39357432839B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{592E8FE5-1298-47CE-8861-6EA7018ACD84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{592E8FE5-1298-47CE-8861-6EA7018ACD84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{592E8FE5-1298-47CE-8861-6EA7018ACD84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{592E8FE5-1298-47CE-8861-6EA7018ACD84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E9B334FC-8E0B-4736-B8D1-BECE7B15FE75} = {84101AA3-09EE-4E44-9F07-E56BB89C2BB7}
+		{E7C3A3B1-F0EA-4A53-9449-1233F30F8279} = {58BC8E70-0E51-4EB0-A485-F2BD289EFC09}
+		{4C54B8AD-9DB2-4F2B-A2BB-657289513A91} = {4BDBE8F9-1604-41A1-ACD2-9D4440A6E91E}
+	EndGlobalSection
+EndGlobal
