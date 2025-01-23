@@ -1,4 +1,6 @@
 ﻿@page "/counter"
+@using OnlineSurvey.DataAccessLayer.Entities
+@inject HttpClient HttpClient
 
 <PageTitle>Counter</PageTitle>
 
@@ -14,5 +16,22 @@
     private void IncrementCount()
     {
         currentCount++;
+    }
+    List<RespondentResult> listR = [];
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+
+            var results = await HttpClient.GetFromJsonAsync<List<RespondentResult>>("GetAllResults");
+            var y = await HttpClient.GetFromJsonAsync<List<Respondents>>("/GetAllUsers");
+            listR = results;
+
+
+        }
+        catch (Exception ex)
+        {
+            StateHasChanged();
+        }
     }
 }

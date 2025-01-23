@@ -25,7 +25,15 @@ namespace OnlineSurvey.DataAccessLayer.Entities
         [ForeignKey("Questions")]
         [DisplayName("QuestionID")]
         public int QuestionID { get; set; }
+        [DisplayName("Question")]
+        public string Question { get; set; }
         [DisplayName("ResponseWeight")]
-        public int ResponseWeight { get; set; }
+        public int RespondentsWeight { get; set; }
+        [DisplayName("ExpectationGap")]
+        public decimal ExpectationGap { get; set; }
+        [DisplayName("Accuracy")]
+        public decimal Accuracy { get; set; }
+        [DisplayName("ManagersWeight")]
+        public int ManagersWeight { get; set; }
     }
 }

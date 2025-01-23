@@ -11,7 +11,7 @@ using OnlineSurvey.Repos;
 namespace OnlineSurvey.Repos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250123135144_InitialDb")]
+    [Migration("20250123154918_InitialDb")]
     partial class InitialDb
     {
         /// <inheritdoc />
@@ -185,15 +185,28 @@ namespace OnlineSurvey.Repos.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ResponseID"));
 
+                    b.Property<decimal>("Accuracy")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("ExpectationGap")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ManagersWeight")
+                        .HasColumnType("int");
+
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("QuestionID")
                         .HasColumnType("int");
 
-                    b.Property<int>("ResponseWeight")
+                    b.Property<int>("RespondentsWeight")
                         .HasColumnType("int");
 
                     b.Property<string>("UserName")

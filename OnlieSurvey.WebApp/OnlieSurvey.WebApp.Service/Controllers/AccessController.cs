@@ -16,8 +16,8 @@ namespace OnlineSurvey.WebApp.Service.Controllers
             this._accessService = accessService;
             _entities = context.Set<Respondents>();
         }
-        [HttpGet("GetAllResults/", Name = "getAllResults")]
-        public async Task<IEnumerable<Respondents>> GetAllResults()
+        [HttpGet("GetAllUsers/", Name = "GetAllUsers")]
+        public async Task<IEnumerable<Respondents>> GetAllUsers()
         {
             try
             {
@@ -29,7 +29,7 @@ namespace OnlineSurvey.WebApp.Service.Controllers
                 return null;
             }
         }
-        [HttpGet("GetLoginState/", Name = "getLoginState")]
+        [HttpPost("GetLoginState/", Name = "getLoginState")]
         public async Task<IEnumerable<Respondents>> Login(string UserName, string Password)
         {
             try

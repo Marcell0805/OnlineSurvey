@@ -1,3 +1,39 @@
 ﻿@page "/results"
+@using OnlineSurvey.DataAccessLayer.Entities
+
 
 <PageTitle>Results</PageTitle>
+
+<table>
+    <thead>
+        <tr>
+            <th>Question</th>
+            <th>Responders Weight</th>
+            <th>Expectaion Gap</th>
+            <th>Accuracy</th>
+            <th>Manager's Weight</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (RespondentResult respondentResult in results)
+        {
+            <tr>
+                <td>
+                    @respondentResult.Question
+                </td>
+                <td>
+                    @respondentResult.RespondentsWeight
+                </td>
+                <td>
+                    @respondentResult.ExpectationGap
+                </td>
+                <td>
+                    @respondentResult.Accuracy
+                </td>
+                <td>
+                    @respondentResult.ManagersWeight
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

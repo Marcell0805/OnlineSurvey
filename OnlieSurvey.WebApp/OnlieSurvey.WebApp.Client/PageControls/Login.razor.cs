@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using OnlineSurvey.DataAccessLayer.Entities;
+using System.Net.Http.Json;
 
 namespace OnlineSurvey.WebApp.Client.Pages
 {
@@ -9,6 +10,8 @@ namespace OnlineSurvey.WebApp.Client.Pages
         public Respondents users { get; set; } = new Respondents();
         [Inject]
         public NavigationManager NavigationManager { get; set; }
+        [Inject]
+        public HttpClient Client { get; set; }
         protected void NavigateToSurvey()
         {
             NavigationManager.NavigateTo("/survey");
@@ -21,7 +24,24 @@ namespace OnlineSurvey.WebApp.Client.Pages
         {
             try
             {
-                NavigateToSurvey();
+                var results = await Client.PostAsJsonAsync("/GetLoginState", users);
+                var a = results.Content;
+                NavigateToResults();
+                //if (results.Count!=0)
+                //{
+                //    if (results[0]!=null)
+                //    {
+                //        foreach (var item in results)
+                //        {
+                //            if (item.RoleID == 1)
+                //                NavigateToResults();
+                //            else
+                //                NavigateToSurvey();
+                //        }
+                //    }
+                    
+                //}
+                    
             }
             catch (Exception ex)
             {

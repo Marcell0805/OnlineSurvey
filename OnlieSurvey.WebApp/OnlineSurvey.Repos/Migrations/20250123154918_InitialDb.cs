@@ -63,7 +63,11 @@ namespace OnlineSurvey.Repos.Migrations
                     UserName = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: false),
                     Password = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     QuestionID = table.Column<int>(type: "int", nullable: false),
-                    ResponseWeight = table.Column<int>(type: "int", nullable: false)
+                    Question = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RespondentsWeight = table.Column<int>(type: "int", nullable: false),
+                    ExpectationGap = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Accuracy = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    ManagersWeight = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
