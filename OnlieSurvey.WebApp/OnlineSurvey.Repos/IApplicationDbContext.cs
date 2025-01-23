@@ -12,6 +12,6 @@ namespace OnlineSurvey.Repos
         DbSet<Expectations> Expectations { get; set; }
         DbSet<Questions> Questions { get; set; }
         DbSet<Respondents> Respondents { get; set; }
-        DbSet<UserDetails> UserDetails { get; set; }
+        DbSet<UserRoles> UserRole { get; set; }
     }
 }

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
-namespace OnlineSurvey.DataAccessLayer.Entities
+namespace OnlineSurvey.WebApp.Service.Models
 {
     [Table("Question")]
     public class Questions

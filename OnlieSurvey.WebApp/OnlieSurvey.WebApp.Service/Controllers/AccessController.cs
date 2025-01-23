@@ -1,12 +1,49 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using OnlineSurvey.DataAccessLayer.Entities;
+using OnlineSurvey.Repos;
+using OnlineSurvey.Services.Contract;
+using OnlineSurvey.Services.Implementation;
 
 namespace OnlineSurvey.WebApp.Service.Controllers
 {
     public class AccessController : Controller
     {
-        public IActionResult Index()
+        private readonly IGenericRepo<Respondents> _accessService;
+        private readonly DbSet<Respondents> _entities;
+        public AccessController(IGenericRepo<Respondents> accessService, ApplicationDbContext context)
         {
-            return View();
+            this._accessService = accessService;
+            _entities = context.Set<Respondents>();
+        }
+        [HttpGet("GetAllResults/", Name = "getAllResults")]
+        public async Task<IEnumerable<Respondents>> GetAllResults()
+        {
+            try
+            {
+                var t = _accessService.GetAll().Result;
+                return t;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+        [HttpGet("GetLoginState/", Name = "getLoginState")]
+        public async Task<IEnumerable<Respondents>> Login(string UserName, string Password)
+        {
+            try
+            {
+                var result = await _entities.FirstOrDefaultAsync(u=> u.UserName==UserName && u.Password==Password);
+                Respondents fourSqaureVenues = result;
+                List<Respondents> l = new();
+                l.Add(result);
+                return l;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
     }
 }

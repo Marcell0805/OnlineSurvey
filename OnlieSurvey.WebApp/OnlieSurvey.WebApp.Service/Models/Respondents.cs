@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace OnlineSurvey.DataAccessLayer.Entities
+namespace OnlineSurvey.WebApp.Service.Models
 {
     [Table("Respondent")]
     public class Respondents
@@ -13,10 +13,10 @@ namespace OnlineSurvey.DataAccessLayer.Entities
         public int UserID { get; set; }
         [StringLength(80)]
         [DisplayName("UserName")]
-        public string UserName { get; set; }
+        public required string UserName { get; set; }
         [StringLength(30)]
         [DisplayName("Password")]
-        public string Password { get; set; }        
+        public required string Password { get; set; }        
         [Required]
         [ForeignKey("UserRoles")]
         public int RoleID { get; set; }

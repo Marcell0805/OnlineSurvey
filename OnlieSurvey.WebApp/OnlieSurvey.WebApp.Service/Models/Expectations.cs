@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnlineSurvey.DataAccessLayer.Entities
+namespace OnlineSurvey.WebApp.Service.Models
 {
     [Table("Objective")]
     public class Expectations

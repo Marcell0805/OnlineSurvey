@@ -1,4 +1,4 @@
-namespace OnlineSurvey.WebApp.Service
+namespace OnlineSurvey.WebApp.Service.Models
 {
     public class WeatherForecast
     {

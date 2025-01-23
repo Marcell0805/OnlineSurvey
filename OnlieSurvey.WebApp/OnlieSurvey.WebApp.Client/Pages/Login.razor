@@ -1,20 +1,19 @@
 ﻿@page "/"
-@inject NavigationManager NavigationManager
 
 <div class="card">
     <h4 class="card-header">Login</h4>
     <div class="card-body">
-        <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
+        <EditForm Model="@users" OnValidSubmit="OnValidSubmit">
             <DataAnnotationsValidator />
             <div class="form-group">
                 <label>Username</label>
-                <InputText @bind-Value="model.userName" class="form-control" />
-                <ValidationMessage For="@(() => model.userName)" />
+                <InputText @bind-Value="users.UserName" class="form-control" />
+                <ValidationMessage For="@(() => users.UserName)" />
             </div>
             <div class="form-group">
                 <label>Password</label>
-                <InputText @bind-Value="model.password" type="password" class="form-control" />
-                <ValidationMessage For="@(() => model.password)" />
+                <InputText @bind-Value="users.Password" type="Password" class="form-control" />
+                <ValidationMessage For="@(() => users.Password)" />
             </div>
             <br />
             <button disabled="@loading" class="btn btn-primary">
@@ -29,27 +28,3 @@
     </div>
 </div>
 
-@code {
-    private Models.Account.Login model = new Models.Account.Login();
-    private bool loading;
-
-    private async void OnValidSubmit()
-    {
-        //     // reset alerts on submit
-        //     AlertService.Clear();
-
-        loading = true;
-        try
-        {
-            // await AccountService.Login(model);
-            // var returnUrl = NavigationManager.QueryString("returnUrl") ?? "";
-            NavigationManager.NavigateTo("home");
-        }
-        catch (Exception ex)
-        {
-            @*  AlertService.Error(ex.Message); *@
-            loading = false;
-            StateHasChanged();
-        }
-    }
-}

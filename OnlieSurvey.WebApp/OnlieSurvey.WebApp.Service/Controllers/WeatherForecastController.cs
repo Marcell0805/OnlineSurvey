@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using OnlineSurvey.WebApp.Service.Models;
 
 namespace OnlineSurvey.WebApp.Service.Controllers
 {

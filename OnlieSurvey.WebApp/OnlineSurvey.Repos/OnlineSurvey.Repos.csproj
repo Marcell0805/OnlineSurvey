@@ -19,4 +19,8 @@
     <ProjectReference Include="..\OnlineSurvey.DataAccessLayer\OnlineSurvey.DataAccessLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>
