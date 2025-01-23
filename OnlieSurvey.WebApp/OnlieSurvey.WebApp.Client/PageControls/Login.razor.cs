@@ -24,24 +24,9 @@ namespace OnlineSurvey.WebApp.Client.Pages
         {
             try
             {
-                var results = await Client.PostAsJsonAsync("/GetLoginState", users);
-                var a = results.Content;
-                NavigateToResults();
-                //if (results.Count!=0)
-                //{
-                //    if (results[0]!=null)
-                //    {
-                //        foreach (var item in results)
-                //        {
-                //            if (item.RoleID == 1)
-                //                NavigateToResults();
-                //            else
-                //                NavigateToSurvey();
-                //        }
-                //    }
-                    
-                //}
-                    
+                var results = await Client.GetFromJsonAsync<List<RespondentResult>>("/GetLoginState");
+                if(results.Count>0)
+                    NavigateToResults();
             }
             catch (Exception ex)
             {

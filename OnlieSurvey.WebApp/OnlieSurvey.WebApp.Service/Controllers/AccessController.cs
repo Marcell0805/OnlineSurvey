@@ -29,16 +29,16 @@ namespace OnlineSurvey.WebApp.Service.Controllers
                 return null;
             }
         }
-        [HttpPost("GetLoginState/", Name = "getLoginState")]
+        [HttpGet("GetLoginState/", Name = "getLoginState")]
         public async Task<IEnumerable<Respondents>> Login(string UserName, string Password)
         {
             try
             {
                 var result = await _entities.FirstOrDefaultAsync(u=> u.UserName==UserName && u.Password==Password);
-                Respondents fourSqaureVenues = result;
-                List<Respondents> l = new();
-                l.Add(result);
-                return l;
+                Respondents userResult = result;
+                List<Respondents> respondents = new();
+                respondents.Add(userResult);
+                return respondents;
             }
             catch (Exception e)
             {
